@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 int mode;
 final int INTRO=0;
 final int GAME=1;
@@ -6,6 +13,10 @@ final int GAMEOVER=3;
 
 float x, y, d;
 float vx,vy;
+int score,lives;
+
+Minim minim;
+AudioPlayer theme, coin, bump, gameover;
 
 void setup() {
   size(800, 800);
@@ -17,6 +28,14 @@ void setup() {
   d=100;
   vx=random(-5,5);
   vy=random(-5,5);
+  score=0;
+  lives=3;
+  minim=new Minim(this);
+  theme= minim.loadFile("MUSIC.mp3");
+  gameover= minim.loadFile("FAILURE.wav");
+  coin= minim.loadFile("SUCCESS.wav");
+  
+  
 }
 
 void draw() {
