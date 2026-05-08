@@ -28,10 +28,12 @@ void gameClicks(){
     coin.rewind();
     coin.play();
   } else if(dist(mouseX,mouseY,100,100)<50){
+    theme.pause();
     mode = PAUSE;
   } else{
     lives=lives-1;
     if (lives==0) {
+      lives=3;
       mode=GAMEOVER;
       gameover.rewind();
       gameover.play();

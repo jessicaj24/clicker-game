@@ -10,10 +10,12 @@ final int INTRO=0;
 final int GAME=1;
 final int PAUSE=2;
 final int GAMEOVER=3;
+final int OPTIONS=4;
 
 float x, y, d;
 float vx,vy;
-int score,lives;
+float target;
+int score,lives,highscore;
 
 Minim minim;
 AudioPlayer theme, coin, bump, gameover;
@@ -28,14 +30,14 @@ void setup() {
   d=100;
   vx=random(-5,5);
   vy=random(-5,5);
+  highscore=0;
   score=0;
   lives=3;
   minim=new Minim(this);
   theme= minim.loadFile("MUSIC.mp3");
   gameover= minim.loadFile("FAILURE.wav");
   coin= minim.loadFile("SUCCESS.wav");
-  
-  
+  target=loadImage("basketball.png");
 }
 
 void draw() {
@@ -47,6 +49,8 @@ void draw() {
     pause();
   } else if (mode == GAMEOVER) {
     gameover();
+  } else if (mode == OPTIONS) {
+    options();
   } else {
     println("Error:Mode="+ mode);
   }
