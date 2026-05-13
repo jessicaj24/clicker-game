@@ -18,7 +18,6 @@ PImage basketball;
 float x, y, d;
 float vx,vy;
 float target;
-float selectedTarget;
 int score,lives,highscore;
 
 Minim minim;
