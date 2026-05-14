@@ -10,8 +10,7 @@ void game () {
   fill(255);
   stroke(0);
   strokeWeight(5);
-  ellipse(x,y,100,100);
-  circle(x,y,d);
+  image(soccer,x,y,100,100);
   x=x+vx;
   y=y+vy;
   if (x<d/2 || x>width-d/2){

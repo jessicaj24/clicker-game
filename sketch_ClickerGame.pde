@@ -12,9 +12,13 @@ final int PAUSE=2;
 final int GAMEOVER=3;
 final int OPTIONS=4;
 
+PImage soccer;
+PImage basketball;
+
 float x, y, d;
 float vx,vy;
-float target;
+float size;
+float sliderY;
 int score,lives,highscore;
 
 Minim minim;
@@ -25,6 +29,7 @@ void setup() {
   mode=INTRO;
   textAlign(CENTER,CENTER);
   rectMode(CENTER);
+  imageMode(CENTER);
   x=width/2;
   y=height/2;
   d=100;
@@ -37,7 +42,8 @@ void setup() {
   theme= minim.loadFile("MUSIC.mp3");
   gameover= minim.loadFile("FAILURE.wav");
   coin= minim.loadFile("SUCCESS.wav");
-  target=loadImage("basketball.png");
+  basketball=loadImage("basketball.png");
+  soccer=loadImage("soccer.png");
 }
 
 void draw() {
@@ -54,4 +60,5 @@ void draw() {
   } else {
     println("Error:Mode="+ mode);
   }
+  
 }

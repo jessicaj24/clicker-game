@@ -11,3 +11,7 @@ void mouseReleased() {
     optionClicks();
   }
 }
+
+void mouseDragged(){
+  slider();
+}

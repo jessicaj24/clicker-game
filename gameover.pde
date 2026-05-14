@@ -12,4 +12,5 @@ void gameover() {
 void gameoverClicks() {
   mode = INTRO;
   theme.rewind();
+  score=0;
 }
